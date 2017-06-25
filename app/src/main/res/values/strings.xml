@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Quick Quote</string>
+
+    <string name="welcome_text">Shake For Quote</string>
+    <string name="copyright_text">Copyright Anandhavalli G, \u00A9 2017</string>
+</resources>
