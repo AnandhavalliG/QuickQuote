@@ -1,16 +1,19 @@
 package com.anandhavalli.quickquote.activity;
 
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.TextView;
 
 import com.anandhavalli.quickquote.R;
+import com.anandhavalli.quickquote.constants.ColorClass;
 import com.anandhavalli.quickquote.constants.QuoteClass;
 
 import java.util.Random;
@@ -77,8 +80,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Random rand = new Random();
         int n = rand.nextInt(QuoteClass.QUOTES.length);
         quoteText.setText(QuoteClass.QUOTES[n]);
+        setColor();
         animateText();
     }
+
+    private void setColor() {
+        Random rand = new Random();
+        int m = rand.nextInt(ColorClass.COLORS.length);
+        quoteText.setTextColor(Color.parseColor(ColorClass.COLORS[m]));
+    }
+
 
     private void animateText() {
         Animation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
